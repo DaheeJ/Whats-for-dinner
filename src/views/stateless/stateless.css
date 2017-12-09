@@ -1,0 +1,27 @@
+.question-container{
+display: flex;
+justify-content: center;
+flex-direction: column;
+
+}
+
+.question-title{
+
+
+}
+
+.question-choices{
+
+
+}
+.question-picture{
+width: 70%;
+display: flex;
+justify-content: space-between;
+margin-left: 15%;
+
+}
+.question-user-selected{
+
+
+}
