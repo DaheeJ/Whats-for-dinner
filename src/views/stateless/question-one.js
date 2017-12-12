@@ -9,7 +9,7 @@ import pizza from './img/pizza.png'
 const QuestionOne = () =>{
     return (
     <div className="question-container">
-        <h1 className="question-title">Stateless Question one</h1>
+        <h1 className="question-title">What do you feel like?</h1>
         <div className="question-choices">
         <div className="question-picture">
             <img src={chicken} className="App-logo" alt="chicken" />
