@@ -4,6 +4,7 @@ import QuestionOne from '../stateless/question-one';
 import QuestionTwo from '../stateless/question-two';
 import QuestionThree from '../stateless/question-three';
 
+
 class Main extends Component {
     constructor(){
         super();
@@ -14,9 +15,9 @@ class Main extends Component {
             },
             howToCook: {
                 picked:'',
-                chicken:['Frid','Boiled','Baked','BBQ'],
-                fish:['Frid','Boiled','Baked','BBQ'],
-                beef:['Frid','Boiled','Baked','BBQ']
+                chicken:['Fried','Boiled','Baked','BBQ'],
+                fish:['Fried','Boiled','Baked','BBQ'],
+                beef:['Fried','Boiled','Baked','BBQ']
             },
             sides: {
                 picked:'',
@@ -29,21 +30,42 @@ class Main extends Component {
         };
         this.showQuestion = this.showQuestion.bind(this);
         this.changeQuestionNumber = this.changeQuestionNumber.bind(this);
+        this.pickedChoice = this.pickedChoice.bind(this);
     }
 
     changeQuestionNumber(){
-        this.setState({qNumger: this.state.qNumber + 1})
+        this.setState({qNumber: this.state.qNumber + 1})
+    }
+
+    pickedChoice(question, selection){
+        const partOfStateToChange = this.state[question];
+        partOfStateToChange.picked = selection;
+        this.setState({partOfStateToChange, qNumber: this.state.qNumber + 1})
+        console.log('partOfStateToChange',this.state)
+
     }
 
      showQuestion(){
         if(this.state.qNumber === 0){
-            return (<QuestionOne/>);
+            return (<QuestionOne 
+                handlePickChoice ={
+                    (question, selection) => this.pickedChoice(question, selection)
+                }/>
+            );
         }
         else if(this.state.qNumber === 1){
-            return (<QuestionTwo/>);   
+            return (<QuestionTwo 
+                handlePickChoice = {
+                    (question, selection) => this.pickedChoice(question, selection) 
+                }/>
+            );   
         }
         else if(this.state.qNumer === 2){
-            return (<QuestionThree/>);
+            return (<QuestionThree 
+                handlePickChoice = {
+                    (question, selection)=> this.pickedChoice(question, selection) 
+                }/>
+            );
         }else{
             return (<h1>Dinner Time</h1>);
         }

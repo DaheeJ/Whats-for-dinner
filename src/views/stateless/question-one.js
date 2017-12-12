@@ -6,16 +6,17 @@ import fish from './img/fish.png'
 import pizza from './img/pizza.png'
 
 
-const QuestionOne = () =>{
+const QuestionOne = ({handlePickChoice}) =>{
+  
     return (
     <div className="question-container">
         <h1 className="question-title">What do you feel like?</h1>
         <div className="question-choices">
         <div className="question-picture">
-            <img src={chicken} className="App-logo" alt="chicken" />
-            <img src={cow} className="App-logo" alt="cow" />
-            <img src={fish} className="App-logo" alt="fish" />
-            <img src={pizza} className="App-logo" alt="pizza" />
+            <img onClick={()=>handlePickChoice('mainCourse','Chicken')} src={chicken} className="App-logo" alt="Chicken" />
+            <img onClick={()=>handlePickChoice('mainCourse','Beef')} src={cow} className="App-logo" alt="cow" />
+            <img onClick={()=>handlePickChoice('mainCourse','Fish')} src={fish} className="App-logo" alt="fish" />
+            <img onClick={()=>handlePickChoice('mainCourse','Pizza')} src={pizza} className="App-logo" alt="pizza" />
         </div>
         <div className="question-user-selected"></div>
 
