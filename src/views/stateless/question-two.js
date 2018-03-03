@@ -12,9 +12,9 @@ const QuestionTwo = ({handlePickChoice}) =>{
         <h1 className="question-title">How to cook it?</h1>
         <div className="question-choices">
         <div className="question-picture">
-        <img onClick={()=>handlePickChoice('mainCourse','oven')} src={oven} className="App-logo" alt="oven" />
-            <img onClick={()=>handlePickChoice('mainCourse','stov')} src={stov} className="App-logo" alt="stov" />
-            <img onClick={()=>handlePickChoice('mainCourse','bbq')} src={bbq} className="App-logo" alt="bbq" />
+        <img onClick={()=>handlePickChoice('oven')} src={oven} className="App-logo" alt="oven" />
+            <img onClick={()=>handlePickChoice('stove')} src={stov} className="App-logo" alt="stove" />
+            <img onClick={()=>handlePickChoice('bbq')} src={bbq} className="App-logo" alt="bbq" />
         </div>
         <div className="question-user-selected"></div>
 
